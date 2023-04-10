@@ -9,9 +9,9 @@
         <title>App Name - @yield('title')</title>
     </head>
     <body>
-        <div class="container">
+        <main>
             @yield('content')
-        </div>
+        </main>
 
         <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
 
