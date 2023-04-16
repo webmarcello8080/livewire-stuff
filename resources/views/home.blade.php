@@ -11,6 +11,9 @@
 
     @livewire('title-request', ['name' => 'Marcello'])
     
-    <hr>  
+    <hr>
+    @livewire('nested-title')
+    
+    <hr> 
 </div>
 @endsection
