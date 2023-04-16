@@ -10,7 +10,7 @@ class TitleRequest extends Component
     public $name;
     public $greeting;
 
-    public function mount(Request $request, $name){
+    public function mount(Request $request,String $name){
         $this->name = $request->input('name', $name);
         $this->greeting = $request->input('greeting', 'Hello');
     }

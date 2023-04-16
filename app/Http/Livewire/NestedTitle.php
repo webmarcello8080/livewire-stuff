@@ -13,11 +13,11 @@ class NestedTitle extends Component
         return view('livewire.nested-title');
     }
 
-    public function removeTitle($title_id){
+    public function removeTitle(Int $title_id){
         unset($this->names[$title_id]);
     }
 
-    public function newTitle($title_name){
+    public function newTitle(String $title_name){
         $this->names[] = $title_name;
     }
 }
