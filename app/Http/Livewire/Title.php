@@ -11,8 +11,11 @@ class Title extends Component
     public $mark = false;
     public $greetings = 'Hello';
 
-    public function resetName(String $name = 'Another Name') : bool{
-        $this->name = $name;
+    public function resetName() : bool{
+        $this->name = 'Laravel';
+        $this->mark = false;
+        $this->greetings = 'Hello';
+        
         return true;
     }
 
