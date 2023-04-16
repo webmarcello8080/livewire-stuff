@@ -10,6 +10,12 @@ class TitleRequest extends Component
     public $name;
     public $greeting;
 
+    protected $listeners = ['refreshChildren' => 'refreshMe'];
+
+    public function refreshMe(){
+
+    }
+    
     public function mount(Request $request,String $name){
         $this->name = $request->input('name', $name);
         $this->greeting = $request->input('greeting', 'Hello');

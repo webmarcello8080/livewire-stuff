@@ -17,6 +17,10 @@ class NestedTitle extends Component
         unset($this->names[$title_id]);
     }
 
+    public function refreshChildren(){
+        $this->emit('refreshChildren');
+    }
+
     public function newTitle(String $title_name){
         $this->names[] = $title_name;
     }
