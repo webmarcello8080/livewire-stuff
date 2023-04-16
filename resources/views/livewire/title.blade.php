@@ -9,9 +9,9 @@
         <label for="greetings-id">
             Change the greeting:
             <select id="greetings-id" wire:model="greetings" name="" id="">
-                <option >Hello</option>
-                <option >Ciao</option>
-                <option >Goodbye</option>
+                @foreach ($greeting_array as $greeting)
+                    <option>{{ $greeting }}</option>
+                @endforeach
             </select>
         </label>
 
@@ -21,7 +21,11 @@
         </label>
 
     </div>
-    <form class="flex justify-center mb-6" wire:submit.prevent="resetName()" action="#">
-        <input type="submit" value="Reset Title">
-    </form>
+
+    <div class="flex items-center justify-center gap-4">
+        <form class="flex justify-center mb-6" wire:submit.prevent="randomValue()" action="#">
+            <input type="submit" value="Random Values">
+        </form>
+        <button wire:click="hardReset()">Reset All!</button>
+    </div>
 </div>
