@@ -1,5 +1,5 @@
 <div>
-    <h1 class="text-3xl font-bold underline mb-4 text-center">{{ $greetings}} {{ Str::upper($name) }}{{ $mark ? '!' : ''}}</h1>
+    <h1 class="text-3xl font-bold mb-4 text-center">{{ $greetings}} {{ Str::upper($name) }}{{ $mark ? '!' : ''}}</h1>
     <div class="flex items-center justify-center gap-4 mb-6">
         <label for="name-id">
             Change your name:

@@ -689,6 +689,10 @@ video {
   font-size: 0.875rem;
   line-height: 1.312rem;
 }
+.text-2xl {
+  font-size: 1.6rem;
+  line-height: 1.92rem;
+}
 .font-bold {
   font-weight: 700;
 }

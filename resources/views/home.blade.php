@@ -4,8 +4,12 @@
 
 @section('content')
 <div class="container">
-    
+
     @livewire('title')
+    
+    <hr>
+
+    @livewire('title-request', ['name' => 'Marcello'])
     
     <hr>  
 </div>
