@@ -7,11 +7,18 @@ use App\Models\Product;
 
 class ListingLine extends Component
 {
-    public $product;
+    public Product $product;
+    public string $description;
     public bool $checked = false;
 
-    public function mount(Product $product){
+    protected $rules = [
+        'product.description' => 'nullable|string|max:2000',
+    ];
+
+    public function mount(Product $product)
+    {
         $this->product = $product;
+        $this->description = $product->description;
     }
 
     public function render()
@@ -19,11 +26,17 @@ class ListingLine extends Component
         return view('livewire.product.listingLine');
     }
 
-    public function clickPrice(){
+    public function updatedDescription(){
+        $this->product->description = $this->description;
+        $this->product->save();
+    }
+
+    public function clickPrice()
+    {
         if($this->checked){
-            $this->emit('updatePrice', $this->product->price);
+            $this->emit('updatePrice', number_format($this->product->price, 2, '.', ','));
         } else {
-            $this->emit('updatePrice', -1 * $this->product->price);  
+            $this->emit('updatePrice', -1 * number_format($this->product->price, 2, '.', ','));  
         }
     }
 }

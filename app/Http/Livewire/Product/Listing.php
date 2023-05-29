@@ -8,13 +8,14 @@ use Illuminate\Database\Eloquent\Collection;
 class Listing extends Component
 {
     public $products;
-    public $quantity;
+    public $vat;
     public $price;
     protected $listeners = ['updatePrice'];
 
-    public function mount(Collection $products){
+    public function mount(Collection $products)
+    {
         $this->price = 0;
-        $this->quantity = 0;
+        $this->vat = 20;
         $this->products = $products;
     }
 
@@ -23,13 +24,18 @@ class Listing extends Component
         return view('livewire.product.listing');
     }
 
-    public function increaseQuantity()
+    public function increaseVat()
     {
-        $this->quantity ++;
+        $this->vat ++;
     }
 
-    public function updatePrice(float $price){
-        // dd($price);
+    public function decreaseVat()
+    {
+        $this->vat --;
+    }
+
+    public function updatePrice(float $price)
+    {
         $this->price += $price;
     }
 }
