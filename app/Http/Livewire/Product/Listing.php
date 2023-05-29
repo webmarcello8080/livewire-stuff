@@ -3,14 +3,18 @@
 namespace App\Http\Livewire\Product;
 
 use Livewire\Component;
+use Illuminate\Database\Eloquent\Collection;
 
 class Listing extends Component
 {
     public $products;
-    public $price = 0;
-    // protected $listeners = ['updatePrice'];
+    public $quantity;
+    public $price;
+    protected $listeners = ['updatePrice'];
 
-    public function mount($products){
+    public function mount(Collection $products){
+        $this->price = 0;
+        $this->quantity = 0;
         $this->products = $products;
     }
 
@@ -19,7 +23,13 @@ class Listing extends Component
         return view('livewire.product.listing');
     }
 
-    public function updatePrice(){
-        $this->price ++;
+    public function increaseQuantity()
+    {
+        $this->quantity ++;
+    }
+
+    public function updatePrice(float $price){
+        // dd($price);
+        $this->price += $price;
     }
 }
