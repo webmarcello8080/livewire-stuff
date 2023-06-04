@@ -10,7 +10,7 @@ class Listing extends Component
     public $products;
     public $vat;
     public $price;
-    protected $listeners = ['updatePrice'];
+    protected $listeners = ['updatePrice', 'reRender'];
 
     public function mount(Collection $products)
     {
@@ -22,6 +22,12 @@ class Listing extends Component
     public function render()
     {
         return view('livewire.product.listing');
+    }
+
+    public function reRender()
+    {
+        $this->mount($this->products);
+        $this->render();
     }
 
     public function increaseVat()

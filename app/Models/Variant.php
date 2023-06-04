@@ -16,7 +16,7 @@ class Variant extends Model
         'colour',
     ];
 
-    public function Product(){
+    public function product(){
         return $this->belongsTo(Product::class);
     }
 }

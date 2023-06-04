@@ -10,7 +10,7 @@
     </div>
     <div class="">
         @foreach ($products as $product)
-            @livewire('product.listing-line', ['product' => $product], key($product->id))
+            @livewire('product.single', ['product' => $product], key($product->id))
         @endforeach
     </div>
 </div>

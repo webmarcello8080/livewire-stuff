@@ -5,7 +5,7 @@ namespace App\Http\Livewire\Product;
 use Livewire\Component;
 use App\Models\Product;
 
-class ListingLine extends Component
+class Single extends Component
 {
     public Product $product;
     public string $description;
@@ -23,12 +23,17 @@ class ListingLine extends Component
 
     public function render()
     {
-        return view('livewire.product.listingLine');
+        return view('livewire.product.single');
     }
 
     public function updatedDescription(){
         $this->product->description = $this->description;
         $this->product->save();
+    }
+
+    public function deleteProduct(){
+        $this->product->delete();
+        $this->emit('reRender');
     }
 
     public function clickPrice()

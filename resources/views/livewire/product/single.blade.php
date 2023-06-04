@@ -12,5 +12,6 @@
             </label>
         </div>
         <div><a href="{{ route('products.edit', $product->id)}}">Edit</a></div>
+        <div><span class=" cursor-pointer" wire:click="deleteProduct">X</span></div>
     </div>
 </div>
