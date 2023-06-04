@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Variant;
 use Illuminate\Http\Request;
-use App\Models\Product;
 
-class ProductController extends Controller
+class VariantController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::All();
-
-        return view('products.index', [
-            'products' => $products,
-        ]);
+        //
     }
 
     /**
@@ -45,10 +41,10 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Variant  $variant
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Variant $variant)
     {
         //
     }
@@ -56,26 +52,22 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Variant  $variant
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Variant $variant)
     {
-        $product = Product::findOrFail($id);
-        
-        return view('products.edit', [
-            'product' => $product,
-        ]);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Variant  $variant
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Variant $variant)
     {
         //
     }
@@ -83,10 +75,10 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Variant  $variant
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Variant $variant)
     {
         //
     }
