@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('variants', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('product_id');
             $table->float('price', 8, 2);
             $table->char('size', 125);
             $table->char('colour', 125)->nullable();
             $table->timestamps();
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

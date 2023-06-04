@@ -28,7 +28,7 @@
     </div>
 
     <div class="variants-wrapper">
-        @livewire('variant.index')
+        @livewire('variant.listing')
     </div>
 </div>
 @endsection

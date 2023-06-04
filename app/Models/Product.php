@@ -21,4 +21,8 @@ class Product extends Model
         'featured',
     ];
 
+    public function variants(){
+        return $this->hasMany(Variant::class);
+    }
+
 }
